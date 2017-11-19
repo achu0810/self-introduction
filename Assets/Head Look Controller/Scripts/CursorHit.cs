@@ -13,11 +13,11 @@ public class CursorHit : MonoBehaviour {
 		if (Input.GetKey(KeyCode.DownArrow))
 			offset -= Time.deltaTime;
 		
-		Ray cursorRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-		RaycastHit hit;
-		if (Physics.Raycast(cursorRay, out hit)) {
-			transform.position = hit.point + offset * Vector3.up;
-		}
+		//Ray cursorRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+		//RaycastHit hit;
+		//if (Physics.Raycast(cursorRay, out hit)) {
+		//	transform.position = hit.point + offset * Vector3.up;
+		//}
 		
 		headLook.target = transform.position;
 	}
