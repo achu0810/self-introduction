@@ -25,7 +25,7 @@ public class MessageManager : MonoBehaviour {
 			"I wanted to ";
 		
 		yield return new WaitForSeconds (3.0f);
-		m_text.text = "プレゼンをする\nつもりだったけど\n" +
+		m_text.text = "自己紹介をする\nつもりだったけど\n" +
 		"introduce myself\n with Unity";
 
 		yield return new WaitForSeconds (4.0f);
@@ -35,6 +35,10 @@ public class MessageManager : MonoBehaviour {
 		yield return new WaitForSeconds (4.0f);
 		m_text.text = "申し訳ございません\n" +
 		"I'm sorry.";
+
+		yield return new WaitForSeconds (3.0f);
+		m_text.text = "以下普通の自己紹介\n" +
+		"I introduce myself\n the same as usual";
 	}	
 
 }
