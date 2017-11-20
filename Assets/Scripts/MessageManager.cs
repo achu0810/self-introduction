@@ -24,24 +24,15 @@ public class MessageManager : MonoBehaviour {
 
 	IEnumerator NextMessage() {
 		yield return new WaitForSeconds (3.0f);
-		m_text.text = "Unityを使って\n" +
-			"I wanted to ";
+		m_text.text = "最近何をつくるのにも\n" +
+			"Unityを使っているので";
 		
-		yield return new WaitForSeconds (3.0f);
-		m_text.text = "自己紹介をする\nつもりだったけど\n" +
-		"introduce myself\n with Unity";
+		yield return new WaitForSeconds (5.0f);
+		m_text.text = "自己紹介もUnityで\n" +
+			"やろうと思います";
 
-		yield return new WaitForSeconds (4.0f);
-		m_text.text = "時間がなかったので\n作れませんでした\n" +
-		"but I had no\n time to make it";
-
-		yield return new WaitForSeconds (4.0f);
-		m_text.text = "申し訳ございません\n" +
-		"I'm sorry.";
-
-		yield return new WaitForSeconds (3.0f);
-		m_text.text = "以下普通の自己紹介\n" +
-		"I introduce myself\n the same as usual";
+		yield return new WaitForSeconds (5.0f);
+		m_text.text = "以下普通の自己紹介";
 
 		yield return new WaitForSeconds (3.5f);
 		StartCoroutine (FadeoutImage());
@@ -56,6 +47,9 @@ public class MessageManager : MonoBehaviour {
 		}
 		Animator m_animator = GameObject.FindWithTag ("MainCamera").GetComponent<Animator> ();
 		m_animator.SetTrigger ("ToVideoPanel");
+		yield return new WaitForSeconds (2.5f);
+
+		Instantiate (Resources.Load("SceneManager2") as GameObject);
 	}
 
 }
