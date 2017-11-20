@@ -10,6 +10,7 @@ public class SceneManager : MonoBehaviour {
 	[SerializeField]private Image m_image;
 	[SerializeField]private GameObject m_message;
 	[SerializeField]private int m_count = 0;
+	private float m_a;
 	void Start () {
 
 		float m_alpha = 1.0f;
