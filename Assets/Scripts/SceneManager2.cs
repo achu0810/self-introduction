@@ -11,7 +11,7 @@ public class SceneManager2 : MonoBehaviour {
 	private float m_alpha = 0;
 	private GameObject m_tmp;
 	public Sprite[] m_speites;
-	public GameObject m_video;
+	public GameObject[] m_video;
 
 	void Start () {
 		this.UpdateAsObservable()
@@ -52,17 +52,21 @@ public class SceneManager2 : MonoBehaviour {
 		this.UpdateAsObservable ()
 			.Where (_ => m_count == 6)
 			.Where (_ => Input.GetKeyDown (KeyCode.P))
-			.Where(_ => m_video.active == false)
+			.Where(_ => m_video[0].active == false)
 			.Subscribe (_ => {
-				m_tmp = Instantiate(m_video) as GameObject; 
+				m_tmp = Instantiate(m_video[0]) as GameObject; 
 		});
 		this.UpdateAsObservable ()
-			.Where (_ => m_count == 6)
+			.Where (_ => m_count == 7)
 			.Where (_ => Input.GetKeyDown (KeyCode.P))
-			.Where(_ => m_video.active == true)
+			.Where(_ => m_video[1].active == false)
 			.Subscribe (_ => {
-				Destroy(m_tmp.gameObject);
+				m_tmp = Instantiate(m_video[1]) as GameObject; 
 			});
+		this.UpdateAsObservable ()
+			.Where (_ => m_tmp != null)
+			.Where (_ => Input.GetKeyDown (KeyCode.K))
+			.Subscribe (_ => Destroy (m_tmp.gameObject));
 	}
 
 }
